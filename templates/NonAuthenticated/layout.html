@@ -1,0 +1,61 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Retailers and Whole salers of construction/building material in Tanzania">
+    <meta name="keywords" content="Retailers, Wholesalers, construction, building, material, Tanzania">
+    <title>{% block title %}Tujenge Traders{% endblock %}</title>
+    {% include 'NonAuthenticated/includes/head.html' %}
+</head>
+<body id="home" class="home">
+     <!-- begin:header -->
+     <div class="header" data-parallax="scroll" data-image-src="{% static 'assets/img/bg-shop.jpg' %}" style="background-color: rgba(0, 87, 125, 0.7);">
+        
+        {% include 'NonAuthenticated/includes/navigation.html' %}
+  
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="header-caption">
+                <span class="caption-subtitle">Karibu Tujenge Traders</span>
+                <h2 class="caption-title">Wauzaji wa vifaa vya ujenzi wa majengo ya kiofisi na makazi kwa jumla na reja.</h2>
+                <p>Unaweza ukafika dukani kwetu au ukaweka oda yako kupitia mfumo wetu, Bofya kitufe cha Weka Oda.</p>
+                <i>Jenga na Tujenge Traders.</i>
+                <div class="header-action-button">
+                  <a class="btn btn-warning btn-md" href="#">Weka Oda!</a>
+                </div><!-- header-action-button -->
+              </div><!-- .header-caption -->
+            </div><!-- .col-sm-5 -->
+          </div><!-- .row -->
+        </div><!-- .container -->
+      </div><!-- #header -->
+      <!-- end:header -->
+    
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% include 'NonAuthenticated/includes/footer.html' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'assets/plugins/jquery.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/js/navigation.js' %}"></script>
+    <script src="{% static 'assets/plugins/jquery.easing.js' %}"></script>
+    <script src="{% static 'assets/plugins/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.min.js' %}"></script>
+  </body>
+
+    {% load sweetify %}
+    {% sweetify %}
+</body>
+</html>
