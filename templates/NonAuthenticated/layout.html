@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Best Retailers and Whole salers of construction/building material in Tanzania">
     <meta name="keywords" content="Retailers, Wholesalers, construction, building, material, Tanzania">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <title>{% block title %}Tujenge Traders{% endblock %}</title>
     {% include 'NonAuthenticated/includes/head.html' %}
 </head>
@@ -18,16 +20,32 @@
   
         <div class="container">
           <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-5 order-sm-2 order-1">
               <div class="header-caption">
                 <span class="caption-subtitle">Karibu Tujenge Traders</span>
                 <h2 class="caption-title">Wauzaji wa vifaa vya ujenzi wa majengo ya kiofisi na makazi kwa jumla na reja.</h2>
                 <p>Unaweza ukafika dukani kwetu au ukaweka oda yako kupitia mfumo wetu, Bofya kitufe cha Weka Oda.</p>
                 <i>Jenga na Tujenge Traders.</i>
                 <div class="header-action-button">
-                  <a class="btn btn-warning btn-md" href="#">Weka Oda!</a>
+                  <a class="btn btn-warning btn-md" style="font-weight: bold;" href="#">Weka Oda!</a>
                 </div><!-- header-action-button -->
               </div><!-- .header-caption -->
+            </div><!-- .col-sm-5 -->
+            <div class="col-sm-7 order-sm-1 order-2">
+              <div style="display:flex; justify-content: center;align-items: center;margin-top: 50px;">
+                  <div class="swiper">
+                  <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide" style="background: url({% static 'assets/img/WallPuttyWeb.jpg' %}) no-repeat 50% 50% / cover;">
+                    </div>
+                    <div class="swiper-slide" style="background: url({% static 'assets/img/MabatiWeb.jpg' %}) no-repeat 50% 50% / cover;">
+                    </div>
+                    <div class="swiper-slide" style="background: url({% static 'assets/img/GoldStarRangiWeb.jpg' %}) no-repeat 50% 50% / cover;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             </div><!-- .col-sm-5 -->
           </div><!-- .row -->
         </div><!-- .container -->
@@ -53,6 +71,18 @@
     <script src="{% static 'assets/plugins/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'assets/plugins/owl.carousel.min.js' %}"></script>
     <script src="{% static 'assets/js/script.min.js' %}"></script>
+    <script>
+      var swiper = new Swiper(".swiper", {
+        effect: "cards",
+        grabCursor: true,
+        speed: 1000,
+        loop: true,
+        rotate: true,
+        autoplay: {
+          delay: 3000,
+        },
+    });
+    </script>
   </body>
 
     {% load sweetify %}
