@@ -1,8 +1,46 @@
 {% extends 'NonAuthenticated/layout.html' %}
 {% load static %}
 {% block content %}
+  <!-- begin:header -->
+  <div class="header" data-parallax="scroll" data-image-src="{% static 'assets/img/bg-shop.jpg' %}" style="background-color: rgba(0, 87, 125, 0.7);">
+          
+    {% include 'NonAuthenticated/includes/navigation.html' %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 order-sm-1 order-2 text-md-start text-center">
+          <div class="header-caption">
+            <span class="caption-subtitle">Karibu Tujenge Traders</span>
+            <h2 class="caption-title">Wauzaji wa vifaa vya ujenzi wa majengo ya kiofisi na makazi kwa jumla na reja.</h2>
+            <p>Unaweza ukaweka oda yako kwa kutupigia simu, kufika dukani kwetu au kupitia mfumo wetu kwa kubofya kitufe cha Weka Oda.</p>
+            <span class="caption-subtitle"><i>Jenga na Tujenge Traders.</i></span>
+            <div class="header-action-button">
+              <a class="btn btn-warning btn-md" style="font-weight: bold;" href="/create-order">Weka Oda!</a>
+            </div><!-- header-action-button -->
+          </div><!-- .header-caption -->
+        </div><!-- .col-sm-5 -->
+        <div class="col-sm-7 order-sm-2 order-1">
+          <div style="display:flex; justify-content: center;align-items: center;margin-top: 50px;">
+              <div class="swiper">
+              <div class="swiper-wrapper">
+                
+                <div class="swiper-slide" style="background: url({% static 'assets/img/WallPuttyWeb.jpg' %}) no-repeat 50% 50% / cover;">
+                </div>
+                <div class="swiper-slide" style="background: url({% static 'assets/img/MabatiWeb.jpg' %}) no-repeat 50% 50% / cover;">
+                </div>
+                <div class="swiper-slide" style="background: url({% static 'assets/img/GoldStarRangiWeb.jpg' %}) no-repeat 50% 50% / cover;">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div><!-- .col-sm-5 -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- #header -->
+  <!-- end:header -->
   <!-- begin:additional-info -->
-  <div id="additional-info" class="additional-info block-section bg-grey padd-20-top padd-80-btm  mx-auto" style="border-radius:7px">
+  <div id="additional-info" class="additional-info block-section bg-grey padd-20-top padd-80-btm  mx-auto">
     <div class="container ">
       <div class="row">
         <div class="col-md-3 col-sm-6">

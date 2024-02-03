@@ -44,3 +44,10 @@ class Sale(models.Model):
 
     def __str__(self):
         return f"{self.product} - {self.quantity_sold} - {self.sale_date}"
+
+class PurchaseOrderRequest(models.Model):
+    customer_name = models.CharField(max_length=255)
+    customer_email = models.EmailField()
+    customer_phone = models.CharField(max_length=20)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -180,3 +180,19 @@ LOGGING = {
         }
     },
 }
+
+# possible options: 'sweetalert', 'sweetalert2' - default is 'sweetalert2'
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+
+# Mail Configurations
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT')
+# EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '74b3636f1c7c18'
+EMAIL_HOST_PASSWORD = '950f5c1a852211'
+EMAIL_PORT = '2525'
