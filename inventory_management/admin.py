@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib import admin
-from .models import Category, Product, Supplier, PurchaseOrder, Sale, PurchaseOrderRequest
+from .models import Category, Product, Supplier, PurchaseOrder, Sale, PurchaseOrderRequest, Brand
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -9,9 +9,15 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price', 'quantity', 'reorder_level')
+    list_display = ('name', 'brand', 'category', 'price', 'quantity', 'reorder_level')
     list_filter = ('category',)
-    search_fields = ('name', 'category__name')
+    search_fields = ('name', 'category__name', 'brand__name')
+    
+@admin.register(Brand)
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    list_filter = ['name']
+    search_fields = ['name']
 
 @admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
