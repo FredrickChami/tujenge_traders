@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='brand',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='inventory_management.brand'),
+            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='inventory_management.brand', null=True),
             preserve_default=False,
         ),
     ]
