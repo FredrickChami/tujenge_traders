@@ -40,7 +40,7 @@ def submit_information(request):
 
 
         if email:
-            html_content_customer = 'Mpendwa '+name+',<br/><br/>Oda yako yenye Taarifa zifuatazo imepokelewa kikamilifu, na tutakurudia haraka iwezekanavyo.'+'<br/><br/><b>Taarifa za Oda:<br/></b> '+description+'<br/><br/>Wako Mwaminifu katika Ujenzi,<br/>Tujenge Traders.'
+            html_content_customer = 'Mpendwa '+name+',<br/><br/>Taarifa zimepokelewa kikamilifu, na tutakurudia haraka iwezekanavyo.'+'<br/><br/><b>Taarifa:<br/></b> '+description+'<br/><br/>Wako Mwaminifu katika Ujenzi,<br/>Tujenge Traders.'
             msg = EmailMultiAlternatives('Taarifa zimepokelewa Kikamilifu',html_content_customer, 'system@tujengetraders.com', [email])
             msg.attach_alternative(html_content_customer, "text/html")
             msg.send()
