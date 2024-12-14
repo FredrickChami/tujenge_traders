@@ -34,14 +34,14 @@ def submit_information(request):
         subject = 'Customer contacted You'
         html_content = '<b>Customer Details</b><br/>'+'<b>Name:</b> '+ name +'<br/><b>Email:</b> '+email+'<br/><b>Phone No.:</b> '+phone+'<br/><br/><b>Order Details:</b><br/>'+description
 
-        msg = EmailMultiAlternatives(subject,html_content, email if email else 'system@tujengetraders.com', ['info@tujengetraders.com'])
+        msg = EmailMultiAlternatives(subject,html_content, 'system@tujengetraders.com', ['info@tujengetraders.com'])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
 
 
         if email:
             html_content_customer = 'Mpendwa '+name+',<br/><br/>Oda yako yenye Taarifa zifuatazo imepokelewa kikamilifu, na tutakurudia haraka iwezekanavyo.'+'<br/><br/><b>Taarifa za Oda:<br/></b> '+description+'<br/><br/>Wako Mwaminifu katika Ujenzi,<br/>Tujenge Traders.'
-            msg = EmailMultiAlternatives('Oda Kupokelewa Kikamilifu',html_content_customer, 'system@tujengetraders.com', [email])
+            msg = EmailMultiAlternatives('Taarifa zimepokelewa Kikamilifu',html_content_customer, 'system@tujengetraders.com', [email])
             msg.attach_alternative(html_content_customer, "text/html")
             msg.send()
 
