@@ -20,7 +20,7 @@ env = environ.Env(
     SECURE_SSL_REDIRECT=(bool, False),
     SESSION_COOKIE_SECURE=(bool, False),
     CSRF_COOKIE_SECURE=(bool, False),
-    SECURE_BROWSER_XSS_FILTER=(bool, False)
+    SECURE_BROWSER_XSS_FILTER=(bool, False),
 )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -190,5 +190,8 @@ EMAIL_BACKEND = env('EMAIL_BACKEND')
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+#EMAIL_USE_SSL = env('EMAIL_USE_SSL')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_SSL_CERTFILE = '/opt/iredmail/ssl/cert.pem'
+EMAIL_SSL_KEYFILE = '/opt/iredmail/ssl/key.pem'
