@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # Custom Apps
     'inventory_management',
@@ -190,8 +191,7 @@ EMAIL_BACKEND = env('EMAIL_BACKEND')
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
-#EMAIL_USE_SSL = env('EMAIL_USE_SSL')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_SSL_CERTFILE = '/opt/iredmail/ssl/cert.pem'
-EMAIL_SSL_KEYFILE = '/opt/iredmail/ssl/key.pem'
+#EMAIL_SSL_CERTFILE = '/opt/iredmail/ssl/cert.pem'
+#EMAIL_SSL_KEYFILE = '/opt/iredmail/ssl/key.pem'
