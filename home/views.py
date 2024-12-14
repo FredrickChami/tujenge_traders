@@ -15,20 +15,23 @@ def create_order(request):
     products = Product.objects.filter(quantity__gte=0).all()
     return render(request, 'NonAuthenticated/create-order.html',{'products':products})
 
-def submit_order(request):
+def contact_us(request):
+    return render(request, 'NonAuthenticated/contact-us.html')
+
+def submit_information(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         description = request.POST.get('description')
-        PurchaseOrderRequest.objects.create(
-            customer_name = name,
-            customer_email = email,
-            customer_phone = phone,
-            description = description
-        )
+        # ConctactUsDetails.objects.create(
+        #     customer_name = name,
+        #     customer_email = email,
+        #     customer_phone = phone,
+        #     description = description
+        # )
 
-        subject = 'New Purchase Order Request'
+        subject = 'Customer contacted You'
         html_content = '<b>Customer Details</b><br/>'+'<b>Name:</b> '+ name +'<br/><b>Email:</b> '+email+'<br/><b>Phone No.:</b> '+phone+'<br/><br/><b>Order Details:</b><br/>'+description
 
         msg = EmailMultiAlternatives(subject,html_content, email if email else 'info@tujengetraders.com', ['info@tujengetraders.com'])
@@ -42,6 +45,11 @@ def submit_order(request):
             msg.attach_alternative(html_content_customer, "text/html")
             msg.send()
 
+        sweetify.toast(request, 'Wasilisho lako limepokelewa kikamilifu!, Tutakurudia Haraka Iwezekanavyo. Jenga na Tujenge Traders.', icon="success", timer=10000, position="bottom")
+        return redirect('/contact-us')
+    
+    sweetify.error(request, 'Samahani!,Imeshindikana kuwasilisha Taarifa zako, tafadhali jaribu njia mbadala kama kupiga simu ama kufika ofisini kwetu.', button="Sawa!", persistent=True)
+    return redirect('/contact-us')
         sweetify.toast(request, 'Oda yako Imepokelewa kikamilifu!, Tutakurudia Haraka Iwezekanavyo. Jenga na Tujenge Traders.', icon="success", timer=10000, position="bottom")
         return redirect('/create-order')
     

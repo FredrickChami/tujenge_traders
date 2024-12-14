@@ -1,0 +1,51 @@
+{% extends 'NonAuthenticated/layout.html' %}
+{% load static %}
+{% block content %}
+  <!-- begin:header -->
+  <div data-parallax="scroll" data-image-src="{% static 'assets/img/bg-shop.jpg' %}" style="height:300px;background-color: rgba(0, 87, 125, 0.7);">
+          
+    {% include 'NonAuthenticated/includes/navigation.html' %}
+  </div><!-- #header -->
+  <!-- end:header -->
+  <!-- begin:Create-Order Form -->
+  <div class="container ">
+
+    <div class="row" >
+        <div class="col-md-8">
+            <div id="" class=" block-section bg-grey p-5  mx-auto" style="border-radius:7px 7px 0 0;margin-top: -100px;">
+                <form action="/submit-information" method="post">
+                    {%csrf_token%}
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Jina Kamili(Sio Lazima)</label>
+                        <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Jina Kamili">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Barua Pepe(Sio Lazima)</label>
+                                <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Mfano: info@tujengetraders.com">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Namba ya Simu(Lazima)</label>
+                                <input type="tel" name="phone" class="form-control" id="exampleFormControlInput1" placeholder="Mfano: +255673736622" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Maelezo(Lazima)</label>
+                        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" placeholder="Mfano: Cement Mifuko 50 Rangi Hi cover ndo 6" required></textarea>
+                    </div>
+                    <button class="btn btn-primary rounded">Wasilisha</button>
+                </form>
+            </div><!-- #additional-info -->
+        </div>
+        
+    </div><!-- .row -->
+</div><!-- container -->
+    
+  <!-- end:Create order Form -->
+
+
+{% endblock %}
